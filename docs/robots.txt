@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://gatsby-starter-apple.netlify.app/sitemap/sitemap-index.xml
+Sitemap: https://gatsby-starter-apple.netlify.app/gatsby-starter-apple/sitemap/sitemap-index.xml
 Host: https://gatsby-starter-apple.netlify.app

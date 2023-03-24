@@ -194,6 +194,7 @@ const pwaPlugins = [
 module.exports = {
   graphqlTypegen: true,
   siteMetadata,
+  pathPrefix: '/gatsby-starter-apple',
   plugins: [
     ...corePlugins,
     ...devPlugins,

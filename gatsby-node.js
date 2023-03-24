@@ -74,10 +74,11 @@ exports.onPostBuild = async () => {
   const sourcePath = path.join(__dirname, 'public');
   const destPath = path.join(__dirname, 'docs');
 
-  // Create the `docs` directory if it doesn't exist
-  if (!fs.existsSync(destPath)) {
-    fs.mkdirSync(destPath);
+  // Delete the `docs` directory and recreate
+  if (fs.existsSync(destPath)) {
+    fs.rmSync(destPath, { recursive: true, force: true });
   }
+  fs.mkdirSync(destPath);
 
   // Loop through each file in the `public` directory
   fs.readdirSync(sourcePath).forEach((file) => {
