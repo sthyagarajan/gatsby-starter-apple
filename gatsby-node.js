@@ -1,4 +1,5 @@
 const path = require(`path`)
+const fs = require('fs');
 const _ = require("lodash")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -68,3 +69,24 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+
+exports.onPostBuild = async () => {
+  const sourcePath = path.join(__dirname, 'public');
+  const destPath = path.join(__dirname, 'docs');
+
+  // Create the `docs` directory if it doesn't exist
+  if (!fs.existsSync(destPath)) {
+    fs.mkdirSync(destPath);
+  }
+
+  // Loop through each file in the `public` directory
+  fs.readdirSync(sourcePath).forEach((file) => {
+    const sourceFile = path.join(sourcePath, file);
+    const destFile = path.join(destPath, file);
+
+    // Move the file to the `docs` directory
+    fs.renameSync(sourceFile, destFile);
+  });
+};
+
+
