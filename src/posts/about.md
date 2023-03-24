@@ -1,6 +1,6 @@
 # Hello
 
-Welcome to my blog. My name is Ed.<br>
-I'm very interested in the web front-end development.
+Welcome to my blog. My name is Sunder Thyagarajan.<br>
+I am starting this journey to share my technical expertise gained over 15 years in the industry
 
-Visit my [Github repository](https://github.com/sungik-choi/gatsby-starter-apple).
+Visit my [Github repository](https://github.com/sthyagarajan).
